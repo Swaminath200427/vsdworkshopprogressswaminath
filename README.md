@@ -1,12 +1,55 @@
-swaminath-vsd<details><summary>Day 0 - Tools Installation </summary>Day 0 - Tools InstallationYosys$git clone [https://github.com/YosysHQ/yosys.git$](https://github.com/YosysHQ/yosys.git$) cd yosys 
+# swaminath-vsd
+
+## Day 0 - Tools Installation
+
+### Yosys
+
+Installation from source for the latest version. This method ensures you have the most up-to-date features.
+
+```bash
+$ git clone https://github.com/YosysHQ/yosys.git
+$ cd yosys
 $ sudo apt install make
 $ sudo apt-get install build-essential clang bison flex \
     libreadline-dev gawk tcl-dev libffi-dev git \
     graphviz xdot pkg-config python3 libboost-system-dev \
     libboost-python-dev libboost-filesystem-dev zlib1g-dev
-$ make 
+$ make
 $ sudo make install
-<img width="575" alt="Yosys output" src="yosys version and installation.png">Icarus Verilog$ sudo apt-get install iverilog
-<img width="702" alt="Icarus Verilog installation command line output" src="iverilog installation.png">GTKWave$ sudo apt update
+```
+
+### Yosys Output
+![Yosys output](<yosys version and installation.png>)
+
+### Yosys Tool 
+![Yosys Tool](yosystool.png)
+
+
+### Icarus Verilog
+
+Simple installation using the standard package manager.
+
+```bash
+$ sudo apt-get install iverilog
+```
+
+### Icarus Verilog installation
+![Icarus Verilog installation](<iverilog installation.png>)
+
+### Icarus Verilog Tool
+![Icarus Verilog Tool](iverilogtool.png)
+
+### GTKWave
+
+Installation using the standard package manager.
+
+```bash
+$ sudo apt update
 $ sudo apt install gtkwave
-<img width="604" alt="GTKWave installation command line output" src="gtkwaveformsinstallation.png"></details>
+```
+
+### GTK Waveform Installation
+![GTKWave installation](gtkwaveformsinstallation.png)
+
+### GTK Waveform Tool 
+![GTK Waveform Tool](gtkwaveformtool.png)
