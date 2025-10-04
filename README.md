@@ -201,7 +201,86 @@ Bad coding practices include mixing blocking and non-blocking assignments within
 # Partial Example 
 ![mmux](week1d5sk3passignp3op.png)
 </details>
+</details>
+<details>
+<summary><b>Week 2 Overview</b></summary>
+<details>
+<summary><b>Baby Soc introduction and details  </b></summary>
+Fundamentals of System-on-Chip (SoC) Design: 
+System-on-Chip (SoC) design represents the pinnacle of modern semiconductor engineering, integrating an entire computer system onto a single integrated circuit. This comprehensive approach to hardware design has revolutionized electronics, enabling everything from smartphones to IoT devices to operate with unprecedented efficiency and compactness. This write-up explores the fundamental concepts of SoC design and demonstrates how BabySoC serves as an ideal educational model for understanding these complex systems.
 
+What is a System-on-Chip (SoC)
+A System-on-Chip (SoC) is an integrated circuit that contains all the components of a complete computer system on a single chip. Unlike traditional system designs where components like processors, memory, and peripherals are separate chips connected via external buses, an SoC integrates these functions into one unified package. This integration significantly enhances performance, reduces power consumption, and minimizes the physical footprint of electronic devices.
+
+The fundamental advantage of SoC architecture lies in its ability to eliminate the performance bottlenecks and power inefficiencies associated with inter-chip communication. By placing all system components on the same silicon die, data transfer speeds increase dramatically while power consumption decreases, making SoCs ideal for battery-powered and space-constrained applications.
+
+Components of a Typical SoC
+Processing Cores
+The heart of any SoC is its processing unit, which can include microprocessors, microcontrollers, or Digital Signal Processors (DSPs). Modern SoCs often incorporate multiple CPU cores, including application processors (such as ARM Cortex or RISC-V cores) and specialized processors for specific tasks. These cores handle everything from general-purpose computing to real-time control functions.
+
+Memory Subsystem
+SoC memory architecture typically includes multiple types of storage: volatile memory (SRAM and DRAM), non-volatile memory (ROM and Flash), and cache memory. The memory hierarchy is carefully designed to balance performance, power consumption, and cost, with high-speed cache memory providing rapid access to frequently used data while larger, slower memory stores the bulk of system information.
+
+Interconnect Infrastructure
+The system interconnect serves as the communication backbone of the SoC, connecting all components through sophisticated on-chip networks. Modern SoCs employ advanced interconnect architectures like Network-on-Chip (NoC) implementations, which provide high-bandwidth, low-latency communication between system components while supporting features like quality-of-service (QoS) management and security firewalls.
+
+Peripheral and I/O Interfaces
+SoCs integrate numerous peripheral controllers and I/O interfaces, including USB, SPI, I2C, UART, Ethernet, and wireless communication modules (Wi-Fi, Bluetooth). These components enable the SoC to communicate with external devices and sensors, making it suitable for a wide range of applications from embedded systems to high-performance computing platforms.
+
+Specialized Hardware Accelerators
+Many modern SoCs include dedicated hardware accelerators for specific functions such as graphics processing (GPUs), cryptographic operations, digital signal processing, and artificial intelligence workloads. These accelerators provide significant performance and power efficiency improvements over software-based implementations.
+
+The SoC Design Flow: From Concept to Silicon
+Architectural Design and Specification
+The SoC design process begins with detailed specification and architectural design, where engineers define the system's functionality, performance requirements, power constraints, and interface specifications. This phase establishes the foundation for all subsequent design activities and determines the overall system architecture.
+
+Functional Modeling and High-Level Design
+Before proceeding to detailed RTL implementation, engineers create high-level functional models using languages like C, SystemC, or specialized modeling tools. These models enable early software development, system-level optimization, and architectural validation without the complexity of low-level hardware details.
+
+RTL Design and Implementation
+The Register Transfer Level (RTL) design phase translates the high-level architecture into detailed hardware descriptions using Hardware Description Languages (HDLs) like Verilog or VHDL. RTL design specifies the exact behavior of digital circuits, including data paths, control logic, and timing relationships.
+
+Verification and Validation
+Functional verification ensures that the RTL implementation correctly matches the specification through extensive simulation, formal verification, and emulation. This critical phase identifies and resolves design bugs before proceeding to physical implementation, as errors found later in the design flow are exponentially more expensive to fix.
+
+Physical Design and Implementation
+The physical design phase transforms the verified RTL into a manufacturable layout through synthesis, floorplanning, placement, routing, and timing optimization. This backend process ensures that the design meets performance, power, and area targets while being manufacturable using specific semiconductor process technologies.
+
+Why BabySoC is a Simplified Model for Learning
+Educational Focus and Accessibility
+VSDBabySoC represents an ideal educational platform for understanding SoC design principles. As a small yet complete RISC-V based SoC, it demonstrates all fundamental SoC concepts while remaining simple enough for students to comprehend and experiment with. The design integrates three key IP cores: a RVMYTH RISC-V processor, an 8x Phase-Locked Loop (PLL) for clock generation, and a 10-bit Digital-to-Analog Converter (DAC) for interfacing with analog systems.
+
+Open-Source Learning Environment
+BabySoC leverages open-source tools and methodologies, making it accessible to students and educators worldwide. The design uses industry-standard tools like Icarus Verilog for simulation and GTKWave for waveform analysis, providing students with hands-on experience using professional-grade development environments without licensing restrictions.
+
+Complete System Integration
+Despite its simplicity, BabySoC demonstrates complete system integration, showing how different IP blocks communicate and work together to create a functional system. Students can observe how the PLL generates stable clock signals, how the RISC-V processor executes instructions, and how the DAC interfaces with external analog devices, providing a holistic view of SoC operation.
+
+Real-World Application Context
+The BabySoC design, fabricated using Sky130 technology, bridges the gap between academic learning and industrial practice. Students working with BabySoC gain experience with the same design methodologies, verification techniques, and implementation flows used in commercial SoC development, preparing them for careers in the semiconductor industry.
+
+The Role of Functional Modeling in SoC Design
+Early Design Validation
+Functional modeling plays a crucial role in SoC design by enabling early validation of system behavior before detailed RTL implementation. High-level models allow designers to explore different architectural options, validate system-level functionality, and identify potential design issues while changes are still relatively inexpensive to implement.
+
+Software Development Enablement
+Functional models provide a platform for early software development, allowing software teams to begin work on drivers, firmware, and applications before hardware is available. This parallel development approach significantly reduces overall project timelines and enables better hardware-software co-optimization.
+
+System-Level Performance Analysis
+Functional models enable system-level performance analysis and optimization, allowing designers to evaluate different architectural trade-offs and identify potential bottlenecks. These models can simulate complex scenarios and workloads that would be impractical to test on actual hardware during early design phases.
+
+Verification Planning and Coverage Analysis
+Functional modeling supports comprehensive verification planning by helping identify test scenarios, coverage metrics, and verification strategies. The models serve as golden references for RTL verification, ensuring that the detailed implementation maintains the intended system behavior.
+
+Conclusion
+System-on-Chip design represents one of the most challenging and rewarding areas of modern engineering, requiring deep understanding of computer architecture, digital design, and physical implementation. The design flow from architectural specification through functional modeling to RTL implementation and physical design demonstrates the complexity and sophistication required for successful SoC development.
+
+BabySoC serves as an excellent educational vehicle for understanding these concepts, providing students with hands-on experience in SoC design, verification, and implementation using industry-standard tools and methodologies. By working with BabySoC, students gain practical experience with the complete SoC design flow while building the foundational knowledge necessary for advanced work in VLSI design and semiconductor engineering.
+
+The role of functional modeling in this process cannot be overstated – it provides the critical bridge between high-level system requirements and detailed hardware implementation, enabling early validation, software development, and system optimization. As SoC designs continue to grow in complexity, the importance of robust functional modeling and systematic design flows will only increase, making educational platforms like BabySoC even more valuable for preparing the next generation of semiconductor engineers.
+</details>
+<details>
+<summary><b>Baby Soc example iverilog execution and GTKwave analysis </b></summary>
 
 
 
